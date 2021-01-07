@@ -21,7 +21,7 @@ export function ComicList({ mostRecentNum }) {
 
     return (
         <ul>
-            {nums.map(num => <ComicLink num={num} /> )}
+            {nums.map(num => <ComicLink num={num} key={num}/> )}
         </ul>
     )
 }

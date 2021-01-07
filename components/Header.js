@@ -5,7 +5,7 @@ export default function Header() {
         <>
         <nav>
             <Link href="/"><a>Home</a></Link>
-            <Link href="about"><a>About</a></Link>
+            <Link href="/about"><a>About</a></Link>
         </nav>
         <h1>XKCD</h1>
         </>
