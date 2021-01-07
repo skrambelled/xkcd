@@ -1,10 +1,20 @@
 import Layout from '../components/layout'
-import ComicList from '../components/ComicList'
+import Comic, { ComicList } from '../components/Comic'
+import { fetch } from '../services/fetcher'
 
-export default function Home() {
+export default function Home({ comic }) {
   return (
     <Layout>
-        <ComicList />
+        <Comic comic={comic} />
+        <ComicList mostRecentNum={comic.num} />
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+    const comic = await fetch();
+
+    return {
+        props: { comic }
+    }
 }
