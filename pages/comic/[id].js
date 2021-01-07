@@ -1,10 +1,9 @@
-import ComicList from '../../components/ComicList'
 import Layout from '../../components/layout'
 import Comic from '../../components/Comic'
 import { fetch } from '../../services/fetcher'
 
 
-export default ({ comic }) => {
+export default function displayComic ({ comic }) {
     return (
         <Layout>
             <Comic comic={comic} />

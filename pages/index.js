@@ -1,13 +1,12 @@
 import Layout from '../components/layout'
-import ComicList from '../components/ComicList'
-import Comic from '../components/Comic'
+import Comic, { ComicList } from '../components/Comic'
 import { fetch } from '../services/fetcher'
 
 export default function Home({ comic }) {
   return (
     <Layout>
         <Comic comic={comic} />
-        {/* <ComicList /> */}
+        <ComicList mostRecentNum={comic.num} />
     </Layout>
   )
 }
