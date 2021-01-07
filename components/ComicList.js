@@ -5,14 +5,14 @@ function ComicList({ comics }) {
     return (
         <ul>
             {comics && comics.length && comics.map( comic => (
-                <Comic key={comic.id} />
+                <ComicLink key={comic.id} />
             ))}
         </ul>
     )
 }
 
 
-function Comic({ comic }) {
+function ComicLink({ comic }) {
     return (
         <li>
             <Link href="/comic/[id].js" as={'/comic/${comic.id}'}>

@@ -1,16 +1,26 @@
 import ComicList from '../../components/ComicList'
 import Layout from '../../components/layout'
+import Comic from '../../components/Comic'
 import { fetch } from '../../services/fetcher'
 
 
-const Comic = ({ comic }) => (
-    <Layout>
-        <h2>{comic && comic.name}</h2>
-        <img
-            src={comic && comic.src}
-            alt={comic && comic.text}
-        />
-    </Layout>
-)
+export default ({ comic }) => {
+    return (
+        <Layout>
+            <Comic comic={comic} />
+        </Layout>
+    )
+}
 
-export default Comic
+
+export async function getServerSideProps(context) {
+    const id = context.query.id;
+
+    const comic = await fetch(id);
+
+    return {
+        props: {
+            comic
+        }
+    }
+}
